@@ -5,6 +5,22 @@
 
 
 
+// UGBLab_Menu_Main_Button 
+void UGBLab_Menu_Main_Button::NativePreConstruct()
+{
+	Super::NativePreConstruct();
+
+}
+//------------------------------------------------------------------------------------------------------------
+void UGBLab_Menu_Main_Button::Init_Widget()
+{
+
+}
+//------------------------------------------------------------------------------------------------------------
+
+
+
+
 // UGBLab_Menu_Main
 void UGBLab_Menu_Main::NativePreConstruct()
 {
