@@ -1,17 +1,19 @@
 //------------------------------------------------------------------------------------------------------------
-#pragma once
+#include "Menu_Main.h"
 //------------------------------------------------------------------------------------------------------------
-#include "Modules/ModuleManager.h"
 
-#include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
 
-//------------------------------------------------------------------------------------------------------------
-class FGBLabMenuMainModule : public IModuleInterface
+
+
+// UGBLab_Menu_Main
+void UGBLab_Menu_Main::NativePreConstruct()
 {
-public:
-	virtual void StartupModule();
-	virtual void ShutdownModule();
-
-};
+	Super::NativePreConstruct();
+}
+//------------------------------------------------------------------------------------------------------------
+void UGBLab_Menu_Main::Init_Widget(UTextBlock *text, UImage *image)
+{
+	Image_Temp = image;
+	Text_Block = text;
+}
 //------------------------------------------------------------------------------------------------------------
