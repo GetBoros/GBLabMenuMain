@@ -15,22 +15,22 @@
 void UGBLab_Menu_Main_Button::NativePreConstruct()
 {
 	Super::NativePreConstruct();
-
 }
 //------------------------------------------------------------------------------------------------------------
 void UGBLab_Menu_Main_Button::Init_Widget(UTextBlock *text, UImage *image)
 {
-	Image_Button = image;
-	TB_Button = text;
+	Button_Image = image;
+	Button_TB = text;
+
+	Button_TB->SetText(Button_Text);
+	Button_DMI_BG = UMaterialInstanceDynamic::Create(Button_MI_BG, this);
+	Button_DMI_BG->SetScalarParameterValue(Material_Scalar_Param, 0.0f);
+	Button_Image->SetBrushFromMaterial(Button_DMI_BG);
 }
 //------------------------------------------------------------------------------------------------------------
-void UGBLab_Menu_Main_Button::Update()
+void UGBLab_Menu_Main_Button::Play_Animation(const float value, UMaterialInstanceDynamic *material_instance_dynamic)
 {
-	DMI_Button_Background = UMaterialInstanceDynamic::Create(Button_Background, this);
-	DMI_Button_Background->SetScalarParameterValue("Hovered", 0.0f);
-
-	Image_Button->SetBrushFromMaterial(DMI_Button_Background);
-	TB_Button->SetText(Button_Text);
+	material_instance_dynamic->SetScalarParameterValue(Material_Scalar_Param, value);
 }
 //------------------------------------------------------------------------------------------------------------
 
@@ -41,11 +41,5 @@ void UGBLab_Menu_Main_Button::Update()
 void UGBLab_Menu_Main::NativePreConstruct()
 {
 	Super::NativePreConstruct();
-}
-//------------------------------------------------------------------------------------------------------------
-void UGBLab_Menu_Main::Init_Widget(UTextBlock *text, UImage *image)
-{
-	Image_Temp = image;
-	Text_Block = text;
 }
 //------------------------------------------------------------------------------------------------------------

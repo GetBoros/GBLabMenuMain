@@ -12,6 +12,5 @@ class FGBLabMenuMainModule : public IModuleInterface
 public:
 	virtual void StartupModule();
 	virtual void ShutdownModule();
-
 };
 //------------------------------------------------------------------------------------------------------------

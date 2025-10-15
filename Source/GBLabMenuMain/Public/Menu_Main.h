@@ -15,14 +15,17 @@ UCLASS(meta = (DisableNativeTick) ) class UGBLab_Menu_Main_Button : public UUser
 public:
 	virtual void NativePreConstruct();
 
-	UFUNCTION(BlueprintCallable) void Init_Widget(UTextBlock *text, UImage *image);
-	UFUNCTION(BlueprintCallable) void Update();
+	const FName Material_Scalar_Param = "Hovered";
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite) UImage *Image_Button = 0;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite) UTextBlock *TB_Button = 0;
+
+	UFUNCTION(BlueprintCallable) void Init_Widget(UTextBlock *text, UImage *image);
+	UFUNCTION(BlueprintCallable) void Play_Animation(const float value, UMaterialInstanceDynamic *material_instance_dynamic);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) UImage *Button_Image = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) UTextBlock *Button_TB = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ExposeOnSpawn = "true", ToolTip = "temp") ) FText Button_Text;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ExposeOnSpawn = "true", ToolTip = "temp") ) UMaterialInterface *Button_Background = 0;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic *DMI_Button_Background = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ExposeOnSpawn = "true", ToolTip = "temp") ) UMaterialInterface *Button_MI_BG= 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) UMaterialInstanceDynamic *Button_DMI_BG= 0;
 };
 //------------------------------------------------------------------------------------------------------------
 UCLASS(meta = (DisableNativeTick) ) class GBLABMENUMAIN_API UGBLab_Menu_Main: public UUserWidget
@@ -32,9 +35,5 @@ UCLASS(meta = (DisableNativeTick) ) class GBLABMENUMAIN_API UGBLab_Menu_Main: pu
 public:
 	virtual void NativePreConstruct();
 
-	UFUNCTION(BlueprintCallable) void Init_Widget(UTextBlock *text, UImage *image);
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite) UImage *Image_Temp = 0;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite) UTextBlock *Text_Block = 0;
 };
 //------------------------------------------------------------------------------------------------------------
