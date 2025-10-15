@@ -19,13 +19,13 @@ void UGBLab_Menu_Main_Button::NativePreConstruct()
 //------------------------------------------------------------------------------------------------------------
 void UGBLab_Menu_Main_Button::Init_Widget(UTextBlock *text, UImage *image)
 {
-	Button_Image = image;
 	Button_TB = text;
+	Button_Image = image;
+	Button_DMI_BG = UMaterialInstanceDynamic::Create(Button_MI_BG, this);
 
 	Button_TB->SetText(Button_Text);
-	Button_DMI_BG = UMaterialInstanceDynamic::Create(Button_MI_BG, this);
-	Button_DMI_BG->SetScalarParameterValue(Material_Scalar_Param, 0.0f);
 	Button_Image->SetBrushFromMaterial(Button_DMI_BG);
+	Button_DMI_BG->SetScalarParameterValue(Material_Scalar_Param, 0.0f);
 }
 //------------------------------------------------------------------------------------------------------------
 void UGBLab_Menu_Main_Button::Play_Animation(const float value, UMaterialInstanceDynamic *material_instance_dynamic)
