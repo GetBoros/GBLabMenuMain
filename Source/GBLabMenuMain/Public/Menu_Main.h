@@ -19,7 +19,7 @@ public:
 
 	const FName Material_Scalar_Param = "Hovered";
 
-	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "My Delegates") FOn_Button_Pressed On_Button_Pressed;
+	UPROPERTY(BlueprintAssignable, BlueprintCallable) FOn_Button_Pressed On_Button_Pressed;
 
 	UFUNCTION(BlueprintCallable) void Init_Widget(UTextBlock *text, UImage *image);
 	UFUNCTION(BlueprintCallable) void Play_Animation(const float value, UMaterialInstanceDynamic *material_instance_dynamic);

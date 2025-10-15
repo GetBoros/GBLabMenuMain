@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------------------------------------
 #include "Menu_Main.h"
 //------------------------------------------------------------------------------------------------------------
-#include "Materials/MaterialInstanceDynamic.h" // <-- ÃËÀÂÍÛÉ ÈÍÊËÞÄ!
+#include "Materials/MaterialInstanceDynamic.h"
 
 #include "Components/Image.h"
 #include "Components/TextBlock.h"
